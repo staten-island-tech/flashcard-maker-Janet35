@@ -8,4 +8,4 @@ class Janet:
     
 janet = ('amazing', 'im so fire yo', 'only girl')
 
-print(janet.)
+print(janet.trait)
