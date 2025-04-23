@@ -9,20 +9,22 @@ class flashcard:
         return f"{self.question}"
     
     def to_dict(self):
-        return {"answer": self.question, "answer": self.answer}
+        return {"question": self.question, "answer": self.answer}
 
 flashcards = [
     flashcard('Name three models: ', 'alex consani, naomi campbell, gigi hadid'),
-    flashcard("What year did The Weeknd perform at a Victoria's Secret Fashion Show in Paris?", "2016"),
-    flashcard("when did Zendaya get engaged?", '2025') 
     ]
 
 flashcards_data = [flashcard.to_dict() for flashcard in flashcards]
 with open("flashcards.json", "w") as file:
     json.dump(flashcards_data, file, indent=4)
+new_flashcard = flashcard("What year did the Weeknd perform at a Victoria's Secret fashion show in Paris?", '2016')
+flashcards_data.append(new_flashcard.to_dict())
 
-print(flashcard.display_info())
-ask = input
+print(flashcard(self).display_info())
+streak = 0
 if input == flashcard.answer:
     streak =+ 1
     print("good job!! Streak: ", streak)
+else:
+    print("you're not quite there yet. Try again!")
