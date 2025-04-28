@@ -32,13 +32,13 @@ with open("flashcards.json", "w") as file:
 streak = 6
 
 while streak <= 9:
-    for flashcard in flashcards:
+    for flashcard.to_dict in flashcards_data:
         answer = input(flashcard.display_info())
         if answer == flashcard.answer:
             streak += 1
             print("good job!! Streak:", streak)
         else:
-            print("you're not quite there yet. Try again!")
-        if streak == 10:
-            print("you've spent enough time studying my goat")
+            streak = 0
+            print("you're not quite there yet. Try again!", "your streak is now", streak)
             break
+
